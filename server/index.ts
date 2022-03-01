@@ -1,11 +1,16 @@
+import 'dotenv/config';
 import next from 'next';
 import { createServer } from 'http';
-import { __PORT__, __PROD__ } from '@utils/constants';
 
-async () => {
+const PORT = process.env.PORT || 3000;
+const DEV = process.env.NODE_ENV !== 'production';
+
+require('dotenv').config();
+
+(async () => {
   // Create Next.js app
   const app = next({
-    dev: !__PROD__,
+    dev: DEV,
   });
 
   // Prepare app
@@ -24,8 +29,8 @@ async () => {
     // Server listening
     server
       .on('listening', async () => {
-        console.log('Server listening on port:', process.env.PORT);
+        console.log('Server listening on port:', PORT);
       })
-      .listen(__PORT__);
+      .listen(PORT);
   });
-};
+})();
