@@ -1,20 +1,17 @@
-import React from 'react';
-import { useTheme as useNextTheme } from 'next-themes';
-import { Button, Switch, useTheme } from '@nextui-org/react';
+import React from "react";
+import CoreLayout from "src/components/layout/core-layout";
+import CoreLayoutHead from "src/components/layout/core-layout-head";
 
 const Home = () => {
-  const { setTheme } = useNextTheme();
-  const { isDark, type } = useTheme();
   return (
-    <div>
-      <Button shadow color="gradient" auto>
-        Gradient
-      </Button>
-      <Switch
-        checked={isDark}
-        onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-      />
-    </div>
+    <CoreLayout
+      head={CoreLayoutHead}
+      headProps={{
+        seoTitle: "Home",
+      }}
+    >
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    </CoreLayout>
   );
 };
 
