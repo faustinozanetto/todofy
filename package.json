@@ -6,6 +6,9 @@
   "author": "Faustino Zanetto <faustizanetto@gmail.com>",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "start:dev": "nodemon"
+  },
   "dependencies": {
     "@nextui-org/react": "^1.0.2-beta.4",
     "next": "^12.1.0",
@@ -41,6 +44,7 @@
     "eslint-plugin-react-hooks": "4.x",
     "prettier": "^2.5.1",
     "ts-node": "^10.5.0",
+    "nodemon": "^2.0.15",
     "typescript": "^4.6.2"
   }
 }
